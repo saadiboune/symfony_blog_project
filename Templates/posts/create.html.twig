@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Blog{% endblock %}
+
+{% block body %}
+
+<h2>Rédiger un article</h2>
+
+{{ form_start(postForm) }}
+{{ form_widget(postForm) }}
+<input type="submit" value="Créer l'article">
+{{ form_end(postForm) }}
+
+{% endblock %}
+

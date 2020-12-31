@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Authentification{% endblock %}
+
+{% block body %}
+      <div class="row pt-4">
+        <section class="login col-md pr-4">
+          {% if error %}
+            <div class="invalid-feedback d-block">
+              <span class="initialism form-error-icon badge badge-danger">Erreur</span>
+              {{ error.messageKey|trans(error.messageData, 'security') }}
+            </div>
+          {% endif %}
+            <h3>Formulaire de connexion</h3>
+          {{ form_start(loginForm) }}
+          {{ form_row(loginForm.email, {
+            'full_name': '_username',
+            'label': 'E-mail',
+          }) }}
+          {{ form_row(loginForm.plainPassword, {
+            'full_name': '_password',
+            'label': 'Mot de passe',
+          }) }}
+          <input type="submit" value="Connexion" class="btn btn-primary">
+          {{ form_end(loginForm) }}
+          <a href="{{ path('register_user') }}">Pas encore inscrit ?</a>
+        </section>
+      </div>
+{% endblock %}

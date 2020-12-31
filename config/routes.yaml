@@ -1,0 +1,6 @@
+security_logout:
+    path: /user/logout
+
+regiter_user:
+    path: /internal/register
+    controller: App\Controller\SecurityController::register
